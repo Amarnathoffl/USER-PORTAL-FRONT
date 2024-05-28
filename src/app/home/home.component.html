@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="sidebarStatus" style="height: 90vh;width: fit-content;" class="col-lg-2 bg-dark d-flex flex-column p-3">
+            <a style="text-decoration: none;color: white;" class="mb-3 fw-bolder" routerLink="/dashboard">Home</a>
+            <a style="text-decoration: none;color: white;" class="mb-3 fw-bolder" routerLink="/users">Users</a>
+            <button (click)="logout()" class="btn btn-link mt-auto text-light">Logout</button>
+        </div>
+        <div class="col">
+        <div class="row mt-2">
+            <div class="col-lg-8">
+                <div style="height: 140px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/664/483/large_2x/abstract-blue-banner-design-vector.jpg');background-size: cover;" class="banner rounded p-3 d-flex align-items-center shadow">
+                    <h1 class="text-light" style="font-size: 50px;"><i (click)="menuClicked()" class=" fa-solid fa-bars text-light me-4 btn"></i>Welcome {{adminName}}</h1>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-6 mt-5">
+                        <app-calender></app-calender>
+                    </div>
+                    <div class="col-lg-6 mt-5">
+                        <app-chart></app-chart>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div style="height: 570px;" class="rounded p-2 border shadow">
+                <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
+                </div>
+                <div style="height: 200px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/664/483/large_2x/abstract-blue-banner-design-vector.jpg');background-size: cover;" class="banner rounded mt-2 d-flex align-items-center shadow">
+                    <h1 class="text-light" style="font-size: 50px;"><i class=" fa-solid fa-users text-light p-3 me-4"></i>All Users : {{userCount}}</h1>
+                </div>
+            </div>
+
+        </div>
+           </div>
+    </div>
+</div>

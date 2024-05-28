@@ -1,0 +1,17 @@
+.login{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+}
+input{
+    display: flex;
+    border: 1px solid rounded;
+}
+.btn{
+    text-align: center;
+   
+}
+
